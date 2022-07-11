@@ -8,7 +8,7 @@ Acknowledgements:
 
 I gained inspo and the "template" for notes from Ekesh Kumar, a former UMD CS grad and TA.
 
-The examples in the PDF were provided by Professor Paul Smith.
+The examples in the PDF were provided by Professor Paul J. Smith.
 
 LaTeX style file (evan.sty) created by https://github.com/vEnhance.
 
