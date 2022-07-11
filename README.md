@@ -11,3 +11,7 @@ I gained inspo and the "template" for notes from Ekesh Kumar, a former UMD CS gr
 The examples in the PDF were provided by Professor Paul Smith.
 
 LaTeX style file (evan.sty) created by https://github.com/vEnhance.
+
+Mom, dad, and Ethan who have always supported me through the way. I am grateful to each and every one of you and more.
+
+And some friends: I will update this later.
