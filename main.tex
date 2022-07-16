@@ -1,6 +1,5 @@
-% CHANGE ALL THE DATA HERE
-
 \documentclass[english, 10pt]{article}
+% \usepackage{amsmath}
 \usepackage[sexy]{evan}
 \usepackage{inconsolata}
 \usepackage[shellescape]{gmp}
@@ -26,7 +25,7 @@
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \lstset{frame=tb,
-  language=Java,
+  language=R,
   aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
@@ -50,7 +49,7 @@
 \newcommand{\me}{Elizabeth Qiu}
 \author{Elizabeth Qiu\thanks{Email: \mailto{elizabethjqiu@gmail.com}}}
 \newcommand{\thisterm}{Summer 2022}
-\newcommand{\website}{https://www-math.umd.edu/offered-courses/412-stat-400-applied-probability-and-statistics-i.html}%chktex 8
+% \newcommand{\website}{https://www-math.umd.edu/offered-courses/412-stat-400-applied-probability-and-statistics-i.html}%chktex 8
 \usepackage{ifpdf}
 \ifpdf%
 \DeclareGraphicsRule{*}{mps}{*}{}
@@ -74,16 +73,136 @@
 }
 
 \begin{document}
-  \thispagestyle{empty}
-  \notefront
-  \tocandfigures
-  
+\thispagestyle{empty}
+\notefront
+\tocandfigures
+
 % wk1
 \include{wk1/jul11}%
 \include{wk1/jul12}%
+\include{wk1/jul13}%
+\include{wk1/jul14}%
+\include{wk1/jul15}%
+\include{wk2/jul18}%
+\include{wk2/jul19}%
+\include{wk2/jul20}%
+\include{wk2/jul21}%
+\include{wk2/jul22}%
+% \include{wk3/julxx}%
 
 \begin{thebibliography}{9}
-\bibitem{effectivejava} 
-Bloch, Joshua. Effective Java. Pearson Education India, 2016.
+  \bibitem{devore}
+  Devore, J. L. (2016). Probability and Statistics for Engineering and the Sciences (9th edition). Cengage.
 \end{thebibliography}
 \end{document}
+
+% Topics
+
+% Data summary and visualization
+
+% Sample mean, median, standard deviation
+
+% *Sample quantiles, *box-plots
+
+% (Scaled) relative-frequency histograms
+
+% Probability
+
+% Sample space, events, probability axioms
+
+% Probabilities as limiting relative frequencies
+
+% Counting techniques, equally likely outcomes
+
+% Conditional probability, Bayes' Theorem
+
+% Independent events
+
+% *Probabilities as betting odds
+
+% Discrete Random Variables
+
+% Distributions of discrete random variables
+
+% Probability mass function, distribution function
+
+% Expected values, moments
+
+% Binomial, hypergeometric, geometric, Poisson distributions
+
+% Binomial as limit of hypergeometric distribution
+
+% Poisson as limit of binomial distribution
+
+% *Poisson process
+
+% Continuous Random Variables
+
+% Densities: probability as an integral
+
+% Cumulative distribution, expectation, moments
+
+% Quantiles for continuous rv's
+
+% Uniform, exponential, normal distributions
+
+% *Gamma function and gamma distribution
+
+% *Other continuous distributions
+
+% *Transformation of rv's (by smoothly invertible functions): distribution function and density
+
+% *Simulation of pseudo-random variables of specified distribution (by applying inverse dist. func. to a uniform pseudo-random variable)
+
+% Joint distributions, random sampling
+
+% Bivariate rv's, joint (discrete) probability mass functions
+
+% *Expectation of function of jointly distributed rv's
+
+% *Joint and marginal densities
+
+% *Correlation, *covariance
+
+% Mutually independent rv's. Mean and variance of sums of independent rv's
+
+% *Sums of rv's, laws of expectation
+
+% Law of Large Numbers, Central Limit Theorem
+
+% Connection between scaled histograms of random samples and probability density functions
+
+% Point estimation
+
+% Populations, statistics, parameters and sampling distributions
+
+% Characteristics of estimators : consistency, accuracy as measured by mean square error, *unbiasedness
+
+% Use of Central Limit Theorem to approximate sampling distributions and accuracy of estimators
+
+% Method of moments estimator
+
+% *Maximum likelihood estimator
+
+% *Estimators as population characteristics of the empirical distribution
+
+% Confidence intervals
+
+% Large sample confidence intervals for means and proportions using Central Limit Theorem
+
+% *Small sample confidence intervals for normal populations using Student's t distribution
+
+% Confidence interval as decision procedure/hypothesis test
+
+% Hypothesis Tests
+
+% *Hypothesis testing definitions (Null and alternate hypotheses, Type I and II errors, significance level and power, p-values)
+
+% *Tests for means and proportions in large samples, based on the Central Limit Theorem
+
+% *Small sample tests for means of normal populations using Student's t distribution
+
+% *Exact tests for proportions based on binomial distribution
+
+
+% * = optional

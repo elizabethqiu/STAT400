@@ -6,12 +6,10 @@ Please let me know about any mistakes at elizabethjqiu@gmail.com with Subject ti
 
 Acknowledgements:
 
-I gained inspo and the "template" for notes from Ekesh Kumar, a former UMD CS grad and TA.
+I gained inspo for notes from Ekesh Kumar, a former UMD CS grad and TA. I used his notes as a template for mine. He's goated.
 
 The examples in the PDF were provided by Professor Paul J. Smith.
 
 LaTeX style file (evan.sty) created by https://github.com/vEnhance.
 
-Mom, dad, and Ethan who have always supported me through the way. I am grateful to each and every one of you and more.
-
-And some friends: I will update this later.
+Family and friends who have always supported me through the way. I am grateful to each and every one of you and more.

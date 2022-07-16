@@ -1,0 +1,93 @@
+\section{Tuesday, July 12, 2022}
+
+\subsection{Probability Calculations}
+Events can be combined ``algebraically" using unions, intersections and complements. There must be corresponding arithmetic rules for calculating their probabilities. These rules are all derived from the axioms. We need to assign probabilities for any theoretical or real-world situation.
+
+For example, we might define the success probability on any trial by $p$ and the failure probability by $1-p$, regardless of what happens on other trials. Then a sequence \{SFSS\}, where $S$ is a success and $F$ is a fail, is assigned probability $p^3(1-p)$.\\
+
+Basic Formulas
+\begin{itemize}
+    \item As we have seen, the sample space $S$ is an event with probability 1. Its complement is the empty set $\varnothing$. Therefore, $S$ is the certain event and $S^\mathsf{'} = \varnothing$ is the impossible event. If $A$ and $B$ are disjoint, then $A \cap B = \varnothing$.
+    \item Here are some basic formulas, proved in the text: $$P(A) = 1-P(A^\mathsf{'})$$
+    $$P(A \cup B) = P(A) + P(A\mathsf{'} \cap B)$$
+    $$ = P(A) + [P(B) - P(A \cap B)]$$
+    $$ = P(A) + P(B) - P(A \cap B)$$
+    $$P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C)$$
+\end{itemize}
+\begin{itemize}
+    \item ``In general, the probability of a union of $k$ events is obtained by summing individual event probabilities, subtracting double intersection probabilities, adding triple intersection probabilities, subtracting quadruple intersection probabilities, and so on" (page 63, \cite{devore}).
+    \item If $A$ occurs whenever $B$ occurs, then $A$ is a \vocab{subset} of $B$, written $A \subseteq B$. In words, $A$ \textit{implies} $B$. Other interpretation include: ``is contained in''. In this case, ${P(A)} \le {P(B)}$.
+    \item If $S$ is a certain event that will occur, then the complement of $S$ is an impossible event. Two disjoint events’ intersection is an empty set (because it will be impossible that those two events will occur at the same time).
+    \item Formulas like these are suggested by Venn diagrams but are proved using the axioms.
+\end{itemize}
+Assigning Probabilities
+\begin{itemize}
+    \item One must know the sample space and the form of the outcomes.
+    \item Let $S = {S_{1}, S_{2}, \ldots, S_{m}}$. Choose numbers $p_{j}, j=1, \ldots, m$ such that $0 \le p_{j} \le 1$ (you choose the probabilities for each $p_{j}$) and $\sum_{j=1}^{m}p_{j}=1$. In this setup, any event has finitely many outcomes. Its probability is the sum $$P(A)=\sum_{s_{j}\in A}p_{j},$$ where each outcome belongs to $A$, with a probability $p_{j}$ attached to it. This rule is used in gambling games with equally likely outcomes.
+    \item Thinking concept for probability in terms of size of a geometric region: if $S$ is a geometric region and $A$ is a subregion, we can define $P(A) = \frac{size\,of\,A}{size\,of\,S}$. ``Size" might mean length (of a line segment), area (of a plane region), or volume (of a solid). This only makes sense if $S$ is bounded.
+\end{itemize}
+
+\subsection{Counting}
+Probability theory began in the 17th century with the analysis of gambling games, such as cards, coin tossing, dice, or roulette. Often a gamble might be repeated several times. Gambles usually have finitely many outcomes. If the gamble is fair, each outcome should have the same probability.
+
+To calculate probabilities, one must calculate the number of outcomes in $S$, say $n$, and the number of outcomes in some event $A$, say $n_{A}$. Then, $P(A)=\frac{n_{A}}{n}$.
+
+Small sample spaces can be counted explicitly. Then $P(A)$ can be calculated for any $A$. For larger and more realistic setups, it may be easier to imagine the experiment as conducted in steps.
+
+\textbf{Example 1}: A committee of 2 members is chosen from an organization of 10 members. First a committee chair is selected; there are 10 ways to do this. Then, a secretary is chosen from the remaining 9 members. Therefore, there are $90 = 10\times9$ ways to select the committee.
+
+\textbf{Example 2}: Two dice, one red and one green, are tossed. There are 6 outcomes for the red die and 6 for the green die. Therefore, there are $36=6\times6$ outcomes of the experiment.
+
+The previous examples illustrate a general principle for a two-step process (assuming that each of the outcomes are equally likely). Suppose there are $m$ outcomes in the first step, followed by $n$ outcomes in the second step based on the outcome in the 1st step from $m$. Then, there are $mn$ total outcomes for the two step process. This principle can be displayed using a \vocab{tree diagram}, where each path through the tree is one way to perform the two-step process. It generalizes to $k$ step processes for any $k$.
+
+\subsection{Permutations and Combinations}
+Suppose there are $n$ objects (persons, households, etc.) and we want to select $k$ objects \textit{in order}. That is a \vocab{permutation}, or ordered arrangement. But how many permutations are there? We create the permutation in $k$ steps and use the basic principle:
+
+\begin{enumerate}
+    \item Choose the first object: there are $n$ ways.
+    \item Choose the second object: there are $n-1$ ways.\\
+    \vdots\\
+    $k$. Choose the $k$-th object: there are $n-(k-1)$ ways. 
+\end{enumerate}
+Hence there are $n(n-1)(n-2)\hdots(n-(k-2))(n-(k-1))=\frac{n!}{(n-k)!}$ permutations (``$\text{permute}\,n\,k$").
+
+A key assumption about permutations is that the objects are distinguishable. This is obviously true is one is permuting persons, but we can imagine that objects are distinguishable, as in \textbf{Example 2}.
+
+But often, order of selection is not important. For example, in a political poll, order of selection is irrelevant. The only event of interest in a poll might be how many sampled persons will vote Democrat or Republican. A \vocab{collection} is an unordered set of $k$ objects chosen from a collection of $n$ objects. Imagine that the objects are names drawn simultaneously from a hat.
+ 
+To count the number of combinations of $k$ objects chosen from a set of $n, C_{k,n}$, we imagine a two-step process:
+\begin{enumerate}
+    \item Choose a combination: $C_{k,n}$ ways.
+    \item Arrange the elements of the combination in order: $k!$ ways.
+\end{enumerate}
+
+The result is a permutation of $k$ (size subset) out of $n$ objects (to choose from). Therefore (``$\text{choose}\,n\,k$"):
+$$P_{k,n} = \frac{n!}{(n-k)!} = C_{k,n} \times k!$$
+$$C_{k,n} = \frac{n!}{k!(n-k)!} = {n \choose k}$$
+
+The $n \choose k$ (``$n \, \text{choose} \,k$") notation is more common, and $n \choose k$ is called a \vocab{binomial coefficient}, because it comes from the binomial theorem (to be discussed later). Note that ${n \choose n} = {n \choose 0} = 1$, and ${n \choose 1} = n$.
+
+\subsection{Basic Counting Principle; Sampling and Replacement}
+Polls and surveys select combinations of persons from a population. This is also true of many card games, such as poker. By contrast, gambling games like dice or roulette repeated trials where the outcomes are the same at each step.
+
+The \vocab{basic counting principle} says that if each step in a multi-step experiment has $n$ outcomes, then there are $n^k$ outcomes in the combined experiment. Drawing without replacement results in $\frac{n!}{(n-k)!}$ outcomes, and drawing with replacement results in $n^k$ outcomes. Examples include lotteries, raffles, powerballs, etc.
+\begin{enumerate}
+    \item \textbf{Example 3}: Urn: Imagine an urn with balls numbered $1, 2, \ldots, n$. If we draw $k$ balls without replacement there are $\frac{n!}{(n-k)!}$ outcomes. If we draw a ball and replace it, there are $n^k$ outcomes.
+    \item \textbf{Example 4}: Daily lotteries: A player bets on a three or four-digit number. There are $10^3$ or $10^4$ possible outcomes.
+    \item \textbf{Example 5}: Raffles: Suppose 10,000 tickets are sold and there is a first prize, second prize, and third prize. Then, the winning tickets are a permutation of three tickets out of 10,000.
+    \item \textbf{Example 6}: Powerball: A player bets on a permutation of 5 out of 69 numbers along with a powerball number, chosen from \{1, 2, \ldots, 26\}. There are $(69 \times 68 \times 67 \times 66 \times 65) \times 26$ outcomes.
+\end{enumerate}
+
+\vocab{Sampling without Replacement}, and \vocab{Ordered sampling with Replacement}\\
+
+\textbf{Example 7}: Imagine an urn contains $r$ red balls and $b$ blue balls. If $k$ balls are drawn without replacement, find $P(A) = P(\text{exactly 4 red balls})$ (assuming equally likely outcomes). 
+
+The sample space contains $r+b \choose k$ outcomes. If $A$ occurs, 4 of the $r$ red balls were chosen and $k-4$ of the blue balls were chosen. The red balls are a combination of 4 out of $r$ red balls. Similarly, the blue balls are a combination of $k-4$ out of $b$ blue balls.
+
+Using the basic principle, the formula for combinations and the equally likely assumption, $$P(A) = \frac{{r \choose 4}{b \choose k-4}}{{r+b \choose k}}.$$
+
+\textbf{Example 8}: Now assume $k$ balls are drawn from the urn \textit{with} replacement. This form of sampling automatically identifies a first, second, etc. ball. Now the sample space has $(r+b)^k$ possible outcomes. We want to find $P(B) = P(\text{first red ball on the fifth draw})$.
+
+If $B$ occurs, the outcome must have been of the form $bbbbrxxx \ldots x$, where the sequence begins as shown, $b$'s are blue, $r$'s are red, and the $x$'s are colored arbitrarily. There are $b^4(r+b)^{k-5}$ outcomes in $B$. Therefore, $$P(B) = \frac{b^4r(r+b)^{k-5}}{(r+b)^k} (\text{the number of outcomes of $B$ divided by the sample space}) = \frac{b^4r}{(r+b)^5}.$$
+
+If the sampling were ordered without replacement, then $$P(B)=\frac{[\frac{b!}{(b-4)!}]r}{[\frac{(r+b)!}{(r+b-4)!}]}.$$ A good application of ordered sampling without replacement is quality testing.

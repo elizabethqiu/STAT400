@@ -1,7 +1,10 @@
 # blink twice if you need help elizabeth 🥲
 *.aux
-main.dvi
-main.log
-main.out
-main.pre
-main.toc
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.pre
+*.synctex.gz
+*.toc

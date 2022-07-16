@@ -1,156 +1,96 @@
-\section{Monday, July 11, 2019}
+\section{Monday, July 11, 2022}
 This class is STAT400: Applied Probability and Statistics I. Topics covered: random variables, standard distributions, moments, law of large numbers and central limit theorem, sampling methods, estimation of parameters, testing of hypotheses.
 
 \subsection{Logistics}
 \begin{itemize}
-	\item Textbook: Devore (2018), Probability and Statistics for Engineering and the Sciences ($9th\%$ ed). Cengage Learning.
+	\item Textbook: Devore (2018), Probability and Statistics for Engineering and the Sciences ($9\th$ ed). Cengage Learning.
     \item All lectures are recorded and posted on Panopto.
-    \item No collaboration on projects.
     \item Frequent homework assignments and possibly pop quizzes. Assignments on ELMS.
     \item Assignments on ELMS. 
-    \item The grade breakdown is $10\%$ for Homeworks, $10\%$ for Quizzes, $25\%$ for 2 Midterms $1$, and $40\%$ for the Final Exam. 
+    \item The grade breakdown is $10\%$ for Homeworks, $10\%$ for Quizzes, $25\%$ for each Midterm (there are 2), and $40\%$ for the Final Exam. 
 \end{itemize} 
 
 \subsection{Probability, Statistics and Data}
-In STAT400, we will visualizing and summarize data, and also use mathematical methods for data analysis.
-\begin{enumerate}
+In STAT400, we will visualizing and summarize data. At the end we will develop mathematical methods for data analysis.
+\begin{itemize}
 	\item \vocab{Statistics} is the science of recognizing, collecting, analyzing, interpreting data.
-    \item \vocab{Probability} is the mathematical theory of randomness and most of this course will be devoted to modeling random phenomena. 
-	\item \vocab{Randomness} is a type of abstraction in which various data objects are known to the user, but how they are represented or implemented is not known to the user. An example of data abstraction is shown by representing a list of people. While the user would know that they have a list of people, they wouldn't know how the list is being represented (for example, we could use an array, an ArrayList, or any other data structure).
-\end{enumerate}
+    \item \vocab{Probability} is a real-valued function of all events in a class of events such that unions, intersections and complements are also events. It is the mathematical theory of randomness and most of this course will be devoted to modeling random phenomena.
+	\item \vocab{Randomness} almost always arises in real world data.
+\end{itemize}
 
-## We went over the "Newcomb's 1882 Measurements" example, where measurements of the passage time of light were recorded by NewComb in 1882. Given values divided by 1000 plus 24 give the time in microseconds for light to traverse a known distance. We had a dataset with a summary of a minimum, 1st quartile value, median, mean, 3rd quartile value, maximum value, and standard deviation.
+\textbf{Example 1}: We went over the "Newcomb's 1882 Measurements" example, where 66 measurements of the passage time of light were recorded by Newcomb in 1882 (values divided by 1000 plus 24 give the time in microseconds for light to traverse a known distance). We had a dataset with a summary of a minimum, 1st quartile value, median, mean, 3rd quartile value, maximum value, and standard deviation.
 
+What do the summaries tell us?
+\begin{itemize}
+    \item The \vocab{mean} and \vocab{median} might both be considered as "typical" values of the data.
+    \item The mean is \[\bar{X} = \frac{1}{66}\sum_{i=1}^{66}X_i,\] the \textit{sample average} of the data.
+    \item The median $\bar{X}$ is the value such that half of the observations are larger than \bar{X} and half are smaller.
+    \item We need to assess how much variation or \textit{spread} is contained in the data. The sample range (max-min) or interquartile range might be used, but a better choice is the standard deviation, defined by \[s^2 = \frac{1}{66-1}\sum_{i=1}^{66}(X_i-\bar{X})^2\].
+\end{itemize}
 
-Once we have the central value of the data: "how close/far do we expect the values to be?"
-Later: standard deviation: value that tells you how close/far away from typical observation we see data / absval of typical distance from mean
-Histogram: good for visualizing data, shape of graph tells you typical distributions
-Outliers: outside of bulk of data
+Once we have the central values of the data, how far do we expect the values to be? \vocab{Standard deviation} is a value that tells you how far away (absolute value) from the typical observation we see data from the mean.
+
+To visualize data, a \vocab{Histogram} is a very helpful shape of the graph that tells you typical distributions. \vocab{Outliers} are points outside of the bulk of data.
 
 Interpreting histograms:
-- Values that are clearly separated from others = outliers
-- Roughly follow "bell curve". Low ends of scales, maximum near mean or median. Bell shapes are not recognized without the graph
-- Dropping outliers: only slightly change the mean and median, but may greatly affect standard deviation (outliers affect spread greatly)
-
-Comparing samples graphically: histograms give good viz of shape/distributions
-\vocab{Boxplot} = we take the min observation, max observation, lower and upper lines are 1st and 3rd quartiles, heavy line in middle is median. Whiskers (horizontal lines) measure spread: interquartile range.
-Boxplot of a single sample is not really that useful, especially where calculations can be made instantly with a couple lines of code. But it's just as easy to create a histogram.
-Don't worry too much about Count Data.
-Most data we will encounter in this course is Measurement Data.
-
-## Cereals
-Histograms are not a reliable indicator when you have small samples of data, like we have in this example.
-
-Recommended: Learn R. You can also use R to analyze data. It's free!
-
-
-
-\subsection{The Java Programming Language}
-Different programming languages provide varying levels of support for object-oriented programming. In particular, Java and C++ allow us to easily perform object-oriented programming. How does Java does this?
 \begin{itemize}
-    \item Java provides us with \vocab{interfaces}, which allows us to specify a set of methods that another class must implement. This allows us to easily express an abstract data type since we can specify the operations and data that an entity must have. Interfaces follow an ``is-a" relationship, meaning that a class that implements an interface is what the interface specifies. As an example, consider an animal interface. If an elephant implements the animal interface, we can perform tasks that are meant for animals with elephants (such as passing an elephant into a function that accepts animals). 
-    \item Java provides us with \vocab{classes}, which can be used as blueprints for other classes. Classes can extend other classes, which makes them \vocab{subclasses}. These subclasses inherit functions from the original class, and this also defines an ``is-a" relationship. 
+    \item Values that are clearly separated from others are outliers.
+    \item The histogram roughly follows the "bell curve", where there are few values at the low ends of scale, rising to a maximum near the mean or median, and then a decline from the maximum. Bell shapes are not easily recognized without visual aid the graph.
+    \item Dropping outliers will only slightly change the mean and median, but may greatly affect the standard deviation, because outliers affect the spread.
+    \item Histograms give good visualizations of shapes and distributions, which allow for comparing samples graphically.
 \end{itemize}
 
-Here are some key points that we should remember about interfaces:
+\textbf{Example 2}: We also went over a Cereal example, using boxplots to compare calories from different Cereal brands. 
+
+Another way to simplify the visualization of a dataset is with a \vocab{Boxplot}. It's made up of the minimum, 1st quartile, median, 3rd quartile, and maximum. The measure spread is the \vocab{interquartile range}.
+
+The boxplot of a single sample is not really that useful, especially where calculations can be made instantly with a couple lines of code. But it's just as easy to create a histogram. And histograms are not a reliable indicator when you have small samples of data, like we have in the Newcomb's 1882 Measurements example.
+
+And don't worry too much about Count Data; most data we will encounter in this course is Measurement Data.
+
+We've seen unusual features of the previous two data sets which may be random or due to some systematic differences. Both systematic differences and unusual observations should be investigated. The summaries and graphs suggest features of data that may be interpreted rigorously by employing the mathematical theory of probability. We will see how to make reliable inferences about data sets like these, once we understand probability theory. That will be our next topic.
+
+Recommended: We will use the \vocab{R} statistical package in this course. R is a general purpose system which has sophisticate mathematical and statistical functions as well as data handling routines. Learn R. It's also free! Book: Dalgard, P. (2008), \textit{Introductory Statistics with R, Springer.}
+
+\subsection{Sample Spaces, Outcomes, and Events}
+Most of this course will be based in probability. Probability theory is based on the concept of a \vocab{random experiment}. The outcome of the experiment is random, but the set of all possible outcomes is known.
+
+We are usually not interested in single outcomes, but rather sets of outcomes, known as \vocab{events}. Events can be described using ``and" (\cap), ``or" (\cup), and ``not" $(\mathsf{'})$. We assign probabilities to these events.
+
+The set of all outcomes is the \vocab{sample space}, denoted \textit{S}, and the individual outcomes are denoted \textit{s}. The sample space can also be continuous.
+
+\textbf{Example 1}: tossing a coin n times, whether fair or unfair, will result in $2^n$ outcomes. The outcomes are H and T. For one coin toss, \textit{S} = \{H, T\}. For three consecutive coin tosses, \textit{S} = \{HHH, HHT, HTH, HTT, THH, THT, TTH, TTT\}.
+
+Probabilities are numerical values assigned to events. For example, in the experiment of tossing three coins, events of interest might be \textit{A} = \{More heads than tails\} or \textit{B} = \{First toss is T\}. Each event describes a set of outcomes. For example, \textit{A} = \{HHH, HHT, HTH, THH\}, \textit{B} = \{THH, THT, TTH, TTT\}.
+
+To combine two events \textit{A} and \textit{B}, we write $\textit{A} \cap \textit{B}$ for ``\textit{A} and \textit{B}" and $\textit{A} \cup \textit{B}$ for ``A or B". Note that $\textit{A} \cup \textit{B}$ means that \textit{A} occurs or \textit{B} occurs or both occur. The complement of \textit{A}, or ``not \textit{A}", is denoted $A^{\mathsf{'}}$.
+
+\subsection{Relative Frequency and Probability}
 \begin{itemize}
-    \item An interface cannot be instantiated. So, if we have an interface called \verb!animal!, typing \verb!Animal a = new Animal()! \textbf{would not compile}.
-    \item An interface can contain many public members, including static final constants, abstract methods (which have no body), default methods (with a body), static methods, and static nested types.
+    \item Probability is a numerical value attached to an event which may or may not occur in a random experiment.
+    \item Baseball is a random experiment: a batter may or may not get a hit. A batter has hundreds of trials of this experiment. A given at-bat is unpredictable, but over a long season the batter's \textit{proportion} of hits becomes stable. This is his batting average. We assume the experiment was conducted more or less identically, and that the player is consistent.
+    \item Consider a long sequence of trials of a random experiment, performed under identical conditions. After \textit{N} trials, the event \textit{A} occurs \textit{N(A)} times. The relative frequency of \textit{A}, $f(A) = \frac{N(A)}{N}$, tends toward a constant value \textit{P(A)}.
 \end{itemize}
 
-Let's look at an example of an interface:
-
-\begin{lstlisting}
-    import java.util.*;
-
-    public interface Animal {
-        
-        public void feed(String food);
-        public int getAge();
-        public boolean manBestFriend();
-        
-        default void grow() {
-            System.out.println("I grow");
-        }
-    }
-\end{lstlisting}
-
-Here, we've created an interface named \verb!Animal!, which other classes can implement. Any class that implements this class will need to also implement the functions \verb!feed!, \verb!getAge()! and \verb!manBestFriend()! with the same return values and parameters specified. The \verb!grow()! function will be associated with any class that implements this interface.
-
-Now let's look at another class that implements the \verb!Animal! interface:
-
-\begin{lstlisting}
-package animalExample;
-
-public class Dog implements Animal {
-	private String name;
-	private int age;
-
-	public Dog(String name, int age) {
-		this.name = name;
-		this.age = age;
-
-	}
-
-	public void feed(String food) {
-		System.out.println("Feeding " + name + " with " + food);
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public boolean manBestFriend() {
-		return true;
-	}
-
-	public void bark() {
-		System.out.println(name + " is barking");
-	}
-}
-\end{lstlisting}
-
-Here are the key things that we should note:
+Properties of relative frequency:
 \begin{itemize}
-    \item The \verb!Dog! class implements the \verb!Animal! class. Thus, it is \textbf{required} to implement all of the methods specified by \verb!Animal! (if we were to comment out even one function, the code wouldn't compile).
-    \item The \verb!Dog! class is allowed to add its own methods, like \verb!bark()!. Likewise, the \verb!Dog! class is allowed to create its own variables, like \verb!name! and \verb!age!.
+    \item $0\le\frac{N(A)}{N}\le1$
+    \item $\frac{N(S)}{N}=1$. This means that \textit{S} is an event. So is $S^{\mathsf{'}}=\varnothing$.
+    \item If \textit{A} and \textit{B} are \vocab{exclusive} or \vocab{disjoint}, meaning they can't occur at the same time, then $\frac{N(A\cup B)}{N}=\frac{N(A)}{N}+\frac{N(B)}{N}$.
 \end{itemize}
 
-Here's another class that implements the \verb!Animal! interface:
+These properties are obvious and should also hold for probabilities, which are limiting relative frequencies. As for implications of relative frequency for random samples, there is a shared characteristic that after an initial ragged, irregular, or unpredictable behavior over the first few trials, it tends to stabilize towards a value \textit{P(A)}. The randomness never goes away, but it does get averaged out.
 
-\begin{lstlisting}
-package animalExample;
+Later, we can use data and real world random experiment observations to create mathematical models.
 
-public class Piranha implements Animal {
-	private int age;
+\subsection{Axioms of Probability}
+Since probability is a mathematical concept, it must follow some mathematical rules. They must satisfy the following axioms:
+\begin{enumerate}
+    \item For any event \textit{A}, $O\le P(A)\le1$.
+    \item The sample space \textit{S} satisfies $P(S)=1$, where \textit{S} resembles a finite or infinite sequence of outcomes.
+    \item Let $A_{1}, A_{2}, \ldots, A_{n}$ be any sequence of disjoint events. Then \[A_{1}, A_{2}, \ldots = \sum_{n=1}^{\infty}P(A_{n})\].
+\end{enumerate}
 
-	public Piranha(int age) {
-		this.age = age;
-	}
+Axioms 1 and 2 resemble properties of relative frequency, but we regard them as defining a mathematical model.
 
-	public void feed(String food) {
-		System.out.println("Piranha is eating " + food);
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public boolean manBestFriend() {
-		return false;
-	}
-
-	public void grow() {
-		System.out.println("I grow like a fish");
-	}
-}
-\end{lstlisting}
-
-Here are some more things that we should take careful note of: \begin{itemize}
-    \item More than one class can implement an interface. In this example, both \verb!Dog! and \verb!Piranha! implement \verb!Animal!.
-    \item We can rewrite methods that are provided to us. More specifically, \verb!Piranha! implements \verb!Animal!, but it rewrites the \verb!grow()! function that was originally provided to it.
-\end{itemize}
-
-Recall that interfaces define an ``is-a" relationship. Since \verb!Piranha! and \verb!Dog! implement \verb!Animal!, we can now treat them as an \verb!Animal!. A good way to verify the ``is-a" relationship is the \verb!instanceof! keyword. In Java, \verb!instanceof! allows us to check whether one object is an instance of a specified type (class, subclass, or interface).
-
-To demonstrate, suppose we declare a piranha variable \verb!p!. We could write a conditional such as \verb!if (p instanceof Animal) { /* Code to be executed */}!, in order to make sure that \verb!p! is an instance of \verb!Animal!. Why would we ever need to do this? This is particularly useful when we're casting. If we attempt to cast an object to a subclass of which it is not an instance of, Java throws a \vocab{ClassCastException}. We can prevent this exception by putting the relevant code in a conditional checking the instance of what we're casting. 
+Why we need Axiom 3: Suppose we have a long sequence of independent trials and cannot describe it the union of finitely many events. Therefore, we assume Axiom 3 to describe its probability; it's extended to handle infinite spaces.
